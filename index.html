@@ -113,7 +113,7 @@
 </head>
 <body>
 
-    <h1>SELECIONE SEU<br>LUTADOR</h1>
+    <h1>CONHEÇA SEU<br>LUTADOR</h1>
 
     <div class="cards-container">
         <div class="card" onclick="selectHero('galadriel')"><div class="text-2xl mb-2">🧝‍♀️</div><div class="text-[9px]">Duda</div></div>
@@ -130,6 +130,8 @@
         <div class="card" onclick="selectHero('bruna')"><div class="text-2xl mb-2">🤱</div><div class="text-[9px]">Bruna</div></div>
         <div class="card" onclick="selectHero('jackeline')"><div class="text-2xl mb-2">🎸</div><div class="text-[9px]">Jackeline</div></div>
         <div class="card" onclick="selectHero('isabelli')"><div class="text-2xl mb-2">🤧</div><div class="text-[9px]">Isabelli</div></div>
+        <div class="card" onclick="selectHero('kathleen')"><div class="text-2xl mb-2">💃</div><div class="text-[9px]">Kathleen</div></div>
+        <div class="card" onclick="selectHero('larissao')"><div class="text-2xl mb-2">🎤</div><div class="text-[9px]">Larissão</div></div>
     </div>
 
     <div id="details-panel" class="details-panel">
@@ -151,7 +153,9 @@
             barbarian: {
                 name: "Rafão",
                 skill: "Habilidade: Super Protetor & Cachaceiro",
-                lore: `Inteligência: Erro 404. Resolve tudo na machadada. Se alguém chegar perto dos amigos, ele vira o Hulk, mas se tiver uma gelada por perto, ele esquece até o nome do vilão. O segredo de todo o seu poder emana diretamente daquela barba de lenhador — se a barba falhar, ele vira um gatinho.`
+                lore: `Inteligência: Erro 404. Resolve tudo na machadada. Se alguém chegar perto dos amigos, ele vira o Hulk — mas se tiver uma gelada por perto, esquece até o nome do vilão. O segredo de todo o seu poder emana diretamente daquela barba de lenhador: se a barba falhar, ele vira um gatinho domesticado.
+
+Mas por trás da aparência de bruto existe um homem refinado… dono de uma coleção suspeitamente grande de cremes para as mãos. Porque não basta esmagar problemas na força: as mãos precisam estar hidratadas, macias e prontas pra próxima machadada. Dizem até que ele coloca mais creme do que gasolina no carro.`
             },
             wizard: {
                 name: "Gabi",
@@ -212,10 +216,20 @@
                 name: "Isabelli",
                 skill: "Habilidade: A Moça do Espirro",
                 lore: `Não conhece o medo — e, aparentemente, nem as leis de trânsito. Atravessa avenidas movimentadas entre os carros como se estivesse num jogo de videogame na vida real. Mas sua verdadeira arma secreta é o espirro: quando ela começa, é uma metralhadora de "atchim" que não tem fim. Se ouvir um, corra, porque a sequência é imparável!`
-            }
-        };
+            },
+            kathleen: {
+            name: "Kathleen",
+            skill: "Habilidade: Maezona Estilosa",
+            lore: `Uma criatura rara de cabelos vermelhos, tão vibrantes quanto a batida de um set de eletrônica. É a prova viva que da pra ser mãe e ao mesmo tempo se divertir. Mas não se iluda pela sua expressão simpatica. Pois também consegue ser bem vingativa quando necessário, com conhecimentos em hardwares ja destruiu peças importantes de seu companheiro. Todo cuidado é pouco`
+        },
+            larissao: {
+            name: "Larissão",
+            skill: "Habilidade: Voz Empoderada",
+            lore: `A personificação da serenidade, mas não se engane: essa calmaria é blindada. Larissão é um verdadeiro exemplo de superação, tendo navegado pelas tempestades mais pesadas para encontrar seu porto seguro. Hoje, ela exala uma paz que desconcerta e uma voz grave e forte que impõe respeito — quem vê esse sorriso de quem tem a vida resolvida nem imagina o livro de memórias que ela carrega nas costas. Ela não apenas sobreviveu; ela virou o jogo e aprendeu a dar risada do caos. E, claro, nada disso seria completo sem o seu porto seguro: sua familia, amigos e seu negão.`
+        }
+    };
 
-        let typeWriterInterval;
+    let typeWriterInterval;
 
         function selectHero(heroId) {
             document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'));
