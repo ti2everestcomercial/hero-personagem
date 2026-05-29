@@ -132,6 +132,7 @@
         <div class="card" onclick="selectHero('isabelli')"><div class="text-2xl mb-2">🤧</div><div class="text-[9px]">Isabelli</div></div>
         <div class="card" onclick="selectHero('kathleen')"><div class="text-2xl mb-2">💃</div><div class="text-[9px]">Kathleen</div></div>
         <div class="card" onclick="selectHero('larissao')"><div class="text-2xl mb-2">🎤</div><div class="text-[9px]">Larissão</div></div>
+        <div class="card" onclick="selectHero('rychard')"><div class="text-2xl mb-2">🔒</div><div class="text-[9px]">Sr. Rychard</div></div>
     </div>
 
     <div id="details-panel" class="details-panel">
@@ -152,25 +153,25 @@
             },
             barbarian: {
                 name: "Rafão",
-                skill: "Habilidade: Super Protetor & Cachaceiro",
-                lore: `Inteligência: Erro 404. Resolve tudo na machadada. Se alguém chegar perto dos amigos, ele vira o Hulk — mas se tiver uma gelada por perto, esquece até o nome do vilão. O segredo de todo o seu poder emana diretamente daquela barba de lenhador: se a barba falhar, ele vira um gatinho domesticado.
+                skill: "Habilidade: Protetor",
+                lore: `Inteligência: Resolve tudo na machadada. Se alguém chegar perto dos amigos, ele vira o Hulk — mas se tiver uma gelada por perto, esquece até o nome do vilão. O segredo de todo o seu poder emana diretamente daquela barba de lenhador: se a barba falhar, ele vira um gatinho domesticado.
 
 Mas por trás da aparência de bruto existe um homem refinado… dono de uma coleção suspeitamente grande de cremes para as mãos. Porque não basta esmagar problemas na força: as mãos precisam estar hidratadas, macias e prontas pra próxima machadada. Dizem até que ele coloca mais creme do que gasolina no carro.`
             },
             wizard: {
                 name: "Gabi",
-                skill: "Habilidade: Desastre Ambulante",
+                skill: "Habilidade: Desastre",
                 lore: `Passou anos estudando magias arcanas, mas tropeça no próprio manto. Se ela tenta lançar uma bola de fogo, provavelmente acaba incendiando a própria mochila. Magia é um estado de caos e ela é a soberana.`
             },
             rogue: {
                 name: "Valadão",
-                skill: "Habilidade: Galã Irresistível",
+                skill: "Habilidade: Charme",
                 lore: `Mestre da furtividade, exceto quando precisa manter a postura para as fotos. Especialista em roubar corações com um simples olhar. Seus bolsos são cheios de charme, perfumes importados e a verdadeira fonte de tudo: seu cavanhaque impecavelmente desenhado, de onde emana todo o seu magnetismo.`
             },
             marcela: {
                 name: "Marcela",
-                skill: "Habilidade: Sempre Certa (Signo de Áries)",
-                lore: `Se a Marcela diz que 2+2 é 5, por favor, não discuta — economize seu tempo. O Áries corre nas veias dela como uma cafeína pura. Ela bate o pé com tanta força que o chão treme, e se ela diz que algo aconteceu de um jeito, é lei. Convencer a Marcela do contrário? Mais fácil ensinar um peixe a andar de bicicleta.`
+                skill: "Habilidade: Sempre Certa",
+                lore: `Se a Marcela diz que 2+2 é 5, por favor, não discuta — economize seu tempo. O sangue de Áries corre nas veias dela como uma cafeína pura. Ela bate o pé com tanta força que o chão treme, e se ela diz que algo aconteceu de um jeito, é lei. Convencer a Marcela do contrário? Mais fácil ensinar um peixe a andar de bicicleta.`
             },
             regianne: {
                 name: "Regianne",
@@ -184,27 +185,27 @@ Mas por trás da aparência de bruto existe um homem refinado… dono de uma col
             },
             shirliane: {
                 name: "Shirliane",
-                skill: "Habilidade: Arretada sem Frescura",
+                skill: "Habilidade: Sem Frescura",
                 lore: `Pernambucana raiz, do tipo que não leva desaforo para casa e muito menos frescura. Se o plano dá errado, ela resolve na base do "oxente" e do improviso. É a cola que mantém o grupo unido, mesmo que para isso precise dar um ou dois gritos. Com ela não tem meio termo: é oito ou oitenta!`
             },
             maria: {
                 name: "Maria",
-                skill: "Habilidade: Marombeira (Rainha da Bagaceira)",
+                skill: "Habilidade: Bagaceira)",
                 lore: `Maranhense de alma, ela jura de pé junto que é fitness, mas a verdade é que seu metabolismo só funciona à base de pura bagaceira. O domingo dela não tem treino, tem cachaça e love — e ai de quem disser que isso não conta como cardio!`
             },
             carla: {
                 name: "Carla",
-                skill: "Habilidade: Estilo Palmeirense",
+                skill: "Habilidade: Estilo",
                 lore: `Palmeirense roxa, ou melhor, verde. Pode cair o mundo, mas se o Palmeiras está no peito, ela está plena. O segredo da sua paz inabalável não é meditação, é a confiança inabalável no seu pisante de luxo e na sua camisa oficial. O Palmeiras pode até não ter Mundial, mas o estilo da Carla é campeão absoluto.`
             },
             layla: {
                 name: "Layla",
-                skill: "Habilidade: Menina Solta (Operação BBB)",
+                skill: "Habilidade: Menina Solta",
                 lore: `Uma 'menina solta' de espírito, sua vida é um eterno rolê preparatório para o grande sonho: o BBB. Ela já tem até o discurso de eliminação ensaiado no espelho do banheiro. Se você a encontrar em uma festa, não se engane: ela não está apenas curtindo, ela está em plena campanha eleitoral pela vaga na casa mais vigiada do Brasil.`
             },
             bruna: {
                 name: "Bruna",
-                skill: "Habilidade: Mãe (Observadora Estratégica)",
+                skill: "Habilidade: Mãe",
                 lore: `A observadora silenciosa do grupo. Ela mantém uma calma que beira o sobrenatural, observando o caos dos outros com a serenidade de quem já viu de tudo e não se abala. Mas cuidado: é a força de uma mãe leoa. Pode parecer que está apenas ali curtindo a brisa, mas ela é a guerreira que resolve qualquer problema (e limpa a bagunça) com um olhar e uma dose de paciência infinita.`
             },
             jackeline: {
@@ -214,22 +215,27 @@ Mas por trás da aparência de bruto existe um homem refinado… dono de uma col
             },
             isabelli: {
                 name: "Isabelli",
-                skill: "Habilidade: A Moça do Espirro",
+                skill: "Habilidade: Espirro",
                 lore: `Não conhece o medo — e, aparentemente, nem as leis de trânsito. Atravessa avenidas movimentadas entre os carros como se estivesse num jogo de videogame na vida real. Mas sua verdadeira arma secreta é o espirro: quando ela começa, é uma metralhadora de "atchim" que não tem fim. Se ouvir um, corra, porque a sequência é imparável!`
             },
             kathleen: {
             name: "Kathleen",
-            skill: "Habilidade: Maezona Estilosa",
+            skill: "Habilidade: Mãezona Estilosa",
             lore: `Uma criatura rara de cabelos vermelhos, tão vibrantes quanto a batida de um set de eletrônica. É a prova viva que da pra ser mãe e ao mesmo tempo se divertir. Mas não se iluda pela sua expressão simpatica. Pois também consegue ser bem vingativa quando necessário, com conhecimentos em hardwares ja destruiu peças importantes de seu companheiro. Todo cuidado é pouco`
         },
             larissao: {
-            name: "Larissão",
-            skill: "Habilidade: Voz Empoderada",
-            lore: `A personificação da serenidade, mas não se engane: essa calmaria é blindada. Larissão é um verdadeiro exemplo de superação, tendo navegado pelas tempestades mais pesadas para encontrar seu porto seguro. Hoje, ela exala uma paz que desconcerta e uma voz grave e forte que impõe respeito — quem vê esse sorriso de quem tem a vida resolvida nem imagina o livro de memórias que ela carrega nas costas. Ela não apenas sobreviveu; ela virou o jogo e aprendeu a dar risada do caos. E, claro, nada disso seria completo sem o seu porto seguro: sua familia, amigos e seu negão.`
-        }
-    };
+                name: "Larissão",
+                skill: "Habilidade: Voz Empoderada",
+                lore: `A personificação da serenidade, mas não se engane: essa calmaria é blindada. Larissão é um verdadeiro exemplo de superação, tendo navegado pelas tempestades mais pesadas para encontrar seu porto seguro. Hoje, ela exala uma paz que desconcerta e uma voz grave e forte que impõe respeito — quem vê esse sorriso de quem tem a vida resolvida nem imagina o livro de memórias que ela carrega nas costas. Ela não apenas sobreviveu; ela virou o jogo e aprendeu a dar risada do caos. E, claro, nada disso seria completo sem o seu porto seguro: sua familia, amigos e seu negão.`
+            },
+            rychard: {
+                name: "Sr. Rychard",
+                skill: "Habilidade: Guardião do Segredo",
+                lore: `ACESSO NEGADO! Este perfil só é visível para almas puras, de bom coração e que estão 100% livres da cachaça. Parece que você ainda não atingiu esse nível de iluminação... ou talvez tenha bebido demais hoje!`
+            }
+        };
 
-    let typeWriterInterval;
+        let typeWriterInterval;
 
         function selectHero(heroId) {
             document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'));
@@ -246,6 +252,12 @@ Mas por trás da aparência de bruto existe um homem refinado… dono de uma col
             loreTextElement.innerText = '';
             
             if (typeWriterInterval) clearInterval(typeWriterInterval);
+
+            // Special logic for locked character
+            if (heroId === 'rychard') {
+                loreTextElement.innerHTML = hero.lore;
+                return;
+            }
 
             let i = 0;
             typeWriterInterval = setInterval(() => {
