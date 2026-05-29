@@ -26,6 +26,9 @@
             margin: 0;
             padding: 15px;
             box-sizing: border-box;
+            background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                              radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+            background-size: 550px 550px, 350px 350px;
         }
 
         h1 {
@@ -108,7 +111,6 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .cursor-blink::after { content: '█'; animation: blink 1s step-end infinite; color: var(--highlight-color); }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
     </style>
 </head>
 <body>
@@ -116,7 +118,6 @@
     <h1>CONHEÇA SEU<br>LUTADOR</h1>
 
     <div class="cards-container" id="cards-container">
-        <!-- Heroes will be injected or kept here -->
         <div class="card" onclick="selectHero('galadriel', event)"><div class="text-2xl mb-2">🧝‍♀️</div><div class="text-[9px]">Duda</div></div>
         <div class="card" onclick="selectHero('barbarian', event)"><div class="text-2xl mb-2">🪓</div><div class="text-[9px]">Rafão</div></div>
         <div class="card" onclick="selectHero('wizard', event)"><div class="text-2xl mb-2">🧙‍♂️</div><div class="text-[9px]">Gabi</div></div>
@@ -133,6 +134,12 @@
         <div class="card" onclick="selectHero('isabelli', event)"><div class="text-2xl mb-2">🤧</div><div class="text-[9px]">Isabelli</div></div>
         <div class="card" onclick="selectHero('kathleen', event)"><div class="text-2xl mb-2">💃</div><div class="text-[9px]">Kathleen</div></div>
         <div class="card" onclick="selectHero('larissao', event)"><div class="text-2xl mb-2">🎤</div><div class="text-[9px]">Larissão</div></div>
+        <div class="card" onclick="selectHero('mika', event)"><div class="text-2xl mb-2">🎂</div><div class="text-[9px]">Mika</div></div>
+        <div class="card" onclick="selectHero('gisele', event)"><div class="text-2xl mb-2">🛡️</div><div class="text-[9px]">Gisele</div></div>
+        <div class="card" onclick="selectHero('thaynara', event)"><div class="text-2xl mb-2">💭</div><div class="text-[9px]">Thaynara</div></div>
+        <div class="card" onclick="selectHero('leticia', event)"><div class="text-2xl mb-2">🤪</div><div class="text-[9px]">Letícia</div></div>
+        <div class="card" onclick="selectHero('geovanna', event)"><div class="text-2xl mb-2">📏</div><div class="text-[9px]">Geovanna</div></div>
+        <div class="card" onclick="selectHero('tamiris', event)"><div class="text-2xl mb-2">💃</div><div class="text-[9px]">Tamiris</div></div>
         <div class="card" onclick="selectHero('rychard', event)"><div class="text-2xl mb-2">🔒</div><div class="text-[9px]">Sr. Rychard</div></div>
     </div>
 
@@ -147,28 +154,34 @@
 
     <script>
         const heroes = {
-            galadriel: { name: "Duda", skill: "Habilidade: Criatividade", lore: `Tão velha quanto o próprio tempo… mas sem aparentar um dia a mais — dizem que o segredo é um hidratante absurdamente caro e um pacto suspeito com a juventude. Dona de olhares fulminantes capazes de fazer até orcs repensarem suas escolhas de vida.` },
-            barbarian: { name: "Rafão", skill: "Habilidade: Protetor", lore: `Inteligência: Resolve tudo na machadada. Se alguém chegar perto dos amigos, ele vira o Hulk — mas se tiver uma gelada por perto, esquece até o nome do vilão. O segredo de todo o seu poder emana diretamente daquela barba de lenhador.` },
-            wizard: { name: "Gabi", skill: "Habilidade: Desastre", lore: `Passou anos estudando magias arcanas, mas tropeça no próprio manto. Se ela tenta lançar uma bola de fogo, provavelmente acaba incendiando a própria mochila.` },
-            rogue: { name: "Valadão", skill: "Habilidade: Charme", lore: `Mestre da furtividade, exceto quando precisa manter a postura para as fotos. Especialista em roubar corações com um simples olhar.` },
-            marcela: { name: "Marcela", skill: "Habilidade: Sempre Certa", lore: `Se a Marcela diz que 2+2 é 5, por favor, não discuta — economize seu tempo. O sangue de Áries corre nas veias dela como uma cafeína pura.` },
-            regianne: { name: "Regianne", skill: "Habilidade: Mutação de Grau & Cerveja", lore: `Uma criatura que transita entre a enxada e o asfalto. Ela fala um dialeto que só ela entende — meio roceira, meio urbana.` },
-            eliane: { name: "Eliane", skill: "Habilidade: Chefe da Gangue Risonha", lore: `A líder suprema do terror com alma de comediante. Fascinada por assuntos macabros e crimes reais, ela te conta um caso horripilante enquanto morre de rir.` },
-            shirliane: { name: "Shirliane", skill: "Habilidade: Sem Frescura", lore: `Pernambucana raiz, do tipo que não leva desaforo para casa e muito menos frescura. Se o plano dá errado, ela resolve na base do "oxente" e do improviso.` },
-            maria: { name: "Maria", skill: "Habilidade: Bagaceira", lore: `Maranhense de alma, ela jura de pé junto que é fitness, mas a verdade é que seu metabolismo só funciona à base de pura bagaceira.` },
-            carla: { name: "Carla", skill: "Habilidade: Estilo", lore: `Palmeirense roxa, ou melhor, verde. Pode cair o mundo, mas se o Palmeiras está no peito, ela está plena. O segredo da sua paz inabalável não é meditação, é a confiança inabalável no seu pisante de luxo.` },
+            galadriel: { name: "Duda", skill: "Habilidade: Criatividade", lore: `Tão velha quanto o próprio tempo… mas sem aparentar um dia a mais — dizem que o segredo é um hidratante absurdamente caro e um pacto suspeito com a juventude. Dona de olhares fulminantes capazes de fazer até orcs repensarem suas escolhas de vida. Mentalmente? Uma incógnita. Vive tendo conversas tão aleatórias que até ela mesma se perde no assunto. E claro, não consegue passar 3 segundos sem passar as mãos no cabelo, como se estivesse em um comercial de shampoo.` },
+            barbarian: { name: "Rafão", skill: "Habilidade: Super Protetor, Cachaceiro & Mãos de Seda", lore: `Resolve tudo na machadada. Se alguém chegar perto dos amigos, ele vira o Hulk, mas se tiver uma gelada por perto, ele esquece até o nome do vilão. O segredo do seu poder emana da barba de lenhador e de uma coleção de cremes de mão invejável, pois ele cuida delas como ninguém.` },
+            wizard: { name: "Gabi", skill: "Habilidade: Desastre Ambulante", lore: `Passou anos estudando magias arcanas, mas tropeça no próprio manto. Se ela tenta lançar uma bola de fogo, provavelmente acaba incendiando a própria mochila. Magia é um estado de caos.` },
+            rogue: { name: "Valadão", skill: "Habilidade: Galã do Cavanhaque", lore: `Mestre da furtividade, exceto quando precisa manter a postura para as fotos. Seu charme vem diretamente do cavanhaque milagroso. Seus bolsos são cheios de perfumes importados e corações roubados.` },
+            marcela: { name: "Marcela", skill: "Habilidade: Sempre Certa", lore: `Se a Marcela diz que 2+2 é 5, por favor, não discuta — economize seu tempo. O sangue de Áries corre nas veias dela como uma cafeína pura e ela bate o pé até a razão ser dela.` },
+            regianne: { name: "Regianne", skill: "Habilidade: Mutação de Grau & Cerveja", lore: `Uma criatura que transita entre a enxada e o asfalto. Ela fala um dialeto que só ela entende — meio roceira, meio urbana. Fica irreconhecível quando tira os óculos e a paixão pela cerveja é seu combustível secreto.` },
+            eliane: { name: "Eliane", skill: "Habilidade: Chefe da Gangue Risonha e Sombria", lore: `Líder suprema do terror com alma de comediante. Fascinada por casos macabros, ela te conta um crime real horripilante enquanto morre de rir. Só não a deixe tomar uma dose, ou a risada se torna um evento global.` },
+            shirliane: { name: "Shirliane", skill: "Habilidade: Sem Frescura", lore: `Pernambucana raiz, do tipo que não leva desaforo para casa. Se o plano dá errado, ela resolve na base do "oxente" e do improviso. Frescura aqui é palavra proibida.` },
+            maria: { name: "Maria", skill: "Habilidade: Fitness de Bagaceira", lore: `Maranhense de alma, ela jura de pé junto que é fitness, mas a verdade é que seu metabolismo só funciona à base de pura bagaceira e muito otimismo.` },
+            carla: { name: "Carla", skill: "Habilidade: Estilo Palmeirense", lore: `Pode cair o mundo, mas se o Palmeiras está no peito, ela está plena. O segredo da sua paz inabalável não é meditação, é a confiança inabalável no seu pisante de luxo e sua camisa do verdao.` },
             layla: { name: "Layla", skill: "Habilidade: Menina Solta", lore: `Uma 'menina solta' de espírito, sua vida é um eterno rolê preparatório para o grande sonho: o BBB. Ela já tem até o discurso de eliminação ensaiado no espelho do banheiro.` },
-            bruna: { name: "Bruna", skill: "Habilidade: Mãe", lore: `A observadora silenciosa do grupo. Ela mantém uma calma que beira o sobrenatural, observando o caos dos outros com a serenidade de quem já viu de tudo.` },
-            jackeline: { name: "Jackeline", skill: "Habilidade: Gigantismo", lore: `Jackeline é a prova viva de que tamanho é documento e bondade é virtude. Com uma altura que exige que os meros mortais usem um binóculo para falar com ela, ela domina qualquer ambiente.` },
-            isabelli: { name: "Isabelli", skill: "Habilidade: Espirro", lore: `Não conhece o medo — e, aparentemente, nem as leis de trânsito. Atravessa avenidas movimentadas entre os carros como se estivesse num jogo de videogame.` },
-            kathleen: { name: "Kathleen", skill: "Habilidade: Mãezona Estilosa", lore: `Uma criatura rara de cabelos vermelhos, tão vibrantes quanto a batida de um set de eletrônica. É a prova viva que da pra ser mãe e ao mesmo tempo se divertir.` },
-            larissao: { name: "Larissão", skill: "Habilidade: Voz Empoderada", lore: `A personificação da serenidade, mas não se engane: essa calmaria é blindada. Larissão é um verdadeiro exemplo de superação, tendo navegado pelas tempestades mais pesadas.` },
-            rychard: { name: "Sr. Rychard", skill: "Habilidade: Guardião do Segredo", lore: `ACESSO NEGADO! Este perfil só é visível para almas puras. Parece que você ainda não atingiu esse nível de iluminação... brincadeiras a parte. Para desbloquear passe pelas histórias de todos os personagens` }
+            bruna: { name: "Bruna", skill: "Habilidade: Mãe Observadora", lore: `Um ser bem calmo que fica na dela apenas observando, mas não se engane: ela é forte e uma guerreira nata quando o assunto é cuidar dos seus.` },
+            jackeline: { name: "Jackeline", skill: "Habilidade: Gigantismo e Rock", lore: `Uma roqueira sinistra com uma bondade sem tamanho. Jackeline exige que todos olhem para cima para falar com ela, mas seu coração é tão grande quanto sua altura.` },
+            isabelli: { name: "Isabelli", skill: "Habilidade: Espirro Infinito", lore: `Doida de um jeito que não tem medo do perigo. Se aventura ao atravessar avenidas no meio dos carros como se fosse um jogo. E cuidado: ela emenda vários espirros em sequência sem aviso prévio.` },
+            kathleen: { name: "Kathleen", skill: "Habilidade: Mãezona Estilosa", lore: `Criatura rara de cabelos vermelhos, tão vibrantes quanto a batida de um set de eletrônica. É a prova viva que dá pra ser mãe e se divertir. Mas não se iluda pela simpatia: com seus conhecimentos de hardware, ela já destruiu peças importantes de companheiros em ataques de fúria vingativa.` },
+            larissao: { name: "Larissão", skill: "Habilidade: Voz de Superação", lore: `Com uma voz grave e forte, ela é a definição de superação. Quem a vê hoje não imagina as batalhas que enfrentou. E seu coração? Esse pertence ao seu negão, seu pilar diário.` },
+            mika: { name: "Mika", skill: "Habilidade: Mestra do Cuscuz", lore: `Uma pessoa incrível e extremamente sentimental. Se você ganhou um bolo ou um cuscuz da Mika, saiba que recebeu um pedaço do seu coração em forma de comida.` },
+            gisele: { name: "Gisele", skill: "Habilidade: Apoio Incondicional", lore: `Uma verdadeira guerreira que enfrentou desafios que derrubariam titãs. Sempre pronta para apoiar suas companheiras, é o braço forte do grupo.` },
+            thaynara: { name: "Thaynara", skill: "Habilidade: Novos Sonhos", lore: `Personalidade forte, cheia de ambições e sonhos. Dizem que agora é uma "nova mulher", longe de vícios e focada no futuro. Uma força da natureza.` },
+            leticia: { name: "Letícia", skill: "Habilidade: Coração Mole", lore: `Doidinha, brincalhona e sorridente. Pode até parecer caótica, mas é empenhada em tudo que faz. No fundo, no fundo, tem um coração mole que derrete por qualquer gesto de carinho.` },
+            geovanna: { name: "Geovanna", skill: "Habilidade: Estilo Compacto", lore: `Não se engane pelo tamanho: essa baixinha é extremamente esperta, estilosa e brincalhona. Ela domina qualquer ambiente com sua energia contagiante.` },
+            tamiris: { name: "Tamiris", skill: "Habilidade: Forrozeira Arretada", lore: `Arretada e apaixonada por forró, a Tamiris é a alma da festa. Com um bom coração, ela anima qualquer lugar por onde passa.` },
+            rychard: { name: "Sr. Rychard", skill: "Habilidade: Guardião do Segredo", lore: `ACESSO NEGADO! Este perfil só é visível para almas puras, de bom coração e que estão 100% livres da cachaça. Parece que você ainda não atingiu esse nível de iluminação... ou talvez precise visitar mais amigos da turma!` }
         };
 
         let typeWriterInterval;
         const visitedHeroes = new Set();
-        const totalHeroesCount = 16; // Exclude Rychard
+        const totalHeroesCount = 22; // Exclude Rychard
 
         function selectHero(heroId, event) {
             document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'));
